@@ -1,5 +1,4 @@
 import pywhatkit as pyw
-import tkinter as tk
 from datetime import date
 
 date_now = date.today().day
