@@ -1,0 +1,71 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Gradient kivy_gradient.Gradient
+
+<Label>
+    size_hint: (0, 0.2) 
+
+<TextInput>
+    size_hint: (0.8, 0.05)
+
+<TheLayout>
+    FloatLayout:
+        orientation: 'horizontal'
+        size: root.width, root.height
+
+        Label:
+            text: 'Add Birthdays'
+            pos_hint: {'center_x': 0.5, 'top': 1}
+            size_hint: (1, 0.2)
+            font_size: 32
+
+        Label:
+            text: 'First Name'
+            pos_hint: {'center_x': 0.21, 'top': 0.9}
+            font_size: 15
+            
+        TextInput:
+            pos_hint: {'center_x': 0.5, 'top': 0.78}
+            multiline: False
+
+        Label:
+            text: 'Last Name'
+            pos_hint: {'center_x': 0.21, 'top': 0.75}
+            font_size: 15
+            
+        TextInput:
+            pos_hint: {'center_x': 0.5, 'top': 0.63}
+            multiline: False
+
+        Label:
+            text: 'Nickname'
+            pos_hint: {'center_x': 0.21, 'top': 0.6}
+            font_size: 15
+            
+        TextInput:
+            pos_hint: {'center_x': 0.5, 'top': 0.48}
+            multiline: False
+
+        Label:
+            text: 'Phone No.'
+            pos_hint: {'center_x': 0.21, 'top': 0.45}
+            font_size: 15
+            
+        TextInput:
+            pos_hint: {'center_x': 0.5, 'top': 0.33}
+            multiline: False
+            
+        Button:
+            canvas:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    texture:
+                        Gradient.horizontal(
+                        get_color_from_hex("#EB3349"), 
+                        get_color_from_hex("#F45C43")
+                        )
+            
+            text: 'Add'
+            size_hint: (0.3, 0.08)
+            pos_hint: {'center_x': 0.5, 'top': 0.2}
+            
