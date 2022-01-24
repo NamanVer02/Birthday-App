@@ -54,18 +54,24 @@
             pos_hint: {'center_x': 0.5, 'top': 0.33}
             multiline: False
             
-        Button:
-            canvas:
-                Rectangle:
-                    size: self.size
-                    pos: self.pos
-                    texture:
-                        Gradient.horizontal(
-                        get_color_from_hex("#EB3349"), 
-                        get_color_from_hex("#F45C43")
-                        )
-            
+        RoundedButton:
             text: 'Add'
             size_hint: (0.3, 0.08)
             pos_hint: {'center_x': 0.5, 'top': 0.2}
+            background_color: (0,0,0,0)
+            background_normal: ''
+            
+
+<RoundedButton@Button>
+    canvas.before:
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [20]
+            texture: 
+                Gradient.horizontal(
+                get_color_from_hex("#EB3349"), 
+                get_color_from_hex("#F45C43")
+                )
+
             
