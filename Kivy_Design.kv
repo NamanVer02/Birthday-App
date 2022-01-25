@@ -8,6 +8,7 @@
     size_hint: (0.8, 0.05)
 
 <TheLayout>
+
     FloatLayout:
         orientation: 'horizontal'
         size: root.width, root.height
@@ -24,6 +25,7 @@
             font_size: 15
             
         TextInput:
+            id: first_name
             pos_hint: {'center_x': 0.5, 'top': 0.78}
             multiline: False
 
@@ -33,6 +35,7 @@
             font_size: 15
             
         TextInput:
+            id: last_name
             pos_hint: {'center_x': 0.5, 'top': 0.63}
             multiline: False
 
@@ -42,6 +45,7 @@
             font_size: 15
             
         TextInput:
+            id: nickname
             pos_hint: {'center_x': 0.5, 'top': 0.48}
             multiline: False
 
@@ -51,15 +55,29 @@
             font_size: 15
             
         TextInput:
+            id: phone
             pos_hint: {'center_x': 0.5, 'top': 0.33}
+            multiline: False
+
+        Label:
+            text: 'Birthday'
+            pos_hint: {'center_x': 0.18, 'top': 0.3}
+            font_size: 15
+            
+        TextInput:
+            id: birthday
+            pos_hint: {'center_x': 0.5, 'top': 0.18}
             multiline: False
             
         RoundedButton:
             text: 'Add'
             size_hint: (0.3, 0.08)
-            pos_hint: {'center_x': 0.5, 'top': 0.2}
+            pos_hint: {'center_x': 0.5, 'top': 0.1}
             background_color: (0,0,0,0)
             background_normal: ''
+            on_press: app.Add()
+
+        
             
 
 <RoundedButton@Button>
